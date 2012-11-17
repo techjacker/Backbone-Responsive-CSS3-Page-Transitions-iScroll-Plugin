@@ -4,7 +4,7 @@
   "main": ["backbone.responsiveCSS3transitions.iscroll.js", "backbone.responsiveCSS3transitions.iscroll.css", "backbone.responsiveCSS3transitions.iscroll.min.js", "backbone.responsiveCSS3transitions.iscroll.min.css"],
   "dependencies": {
     "backbone": "*",
-    "backbone-responsiveCSS3transitions": "0.3.x",
+    "backbone.responsiveCSS3transitions": "0.3.x",
     "iscroll": "*"
   },
   "author": "Andrew Griffiths",

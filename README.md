@@ -10,6 +10,16 @@ iScroll plugin for the [Backbone Responsive CSS3 Page Transitions Plugin](https:
 Demo code available from the [github repo](https://github.com/techjacker/Backbone-CSS3-Page-Transitions-CSS-Frameworks-Demos)
 
 
+## Install via Package Manager
+Grab from [Jam.js](http://jamjs.org/packages/#/details/backbone.responsiveCSS3transitions.iscroll):
+
+	me@badass:~$ jam install backbone.responsiveCSS3transitions.iscroll
+
+or [Bower](https://npmjs.org/package/bower):
+
+	me@badass:~$ bower install backbone.responsiveCSS3transitions.iscroll
+
+
 ## Getting Started
 ### 1. Loading the JS + CSS
 		<link rel="stylesheet" href="scripts/vendor/backbone.responsiveCSS3transitions.min.css"/>
