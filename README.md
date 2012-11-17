@@ -36,14 +36,17 @@ Demo code available from the [github repo](https://github.com/techjacker/Backbon
 
 	// your view....
 	var myBackboneView = Backbone.View.extend({
-		className: 'my-container',
+		className: 'my-container', // must be class NOT an id
 		render: function () {
 			this.$el.html('the html of the new page to be inserted');
 		}
 	});
 
+#### Important! Reference your container via classname NOT id
+iscroll needs an id reference which is provided in the plugin. Just use classes for your backbone views and everything will be fine.
 
-See rest of set up instructions at [main plugin repo](https://github.com/techjacker/Backbone-Responsive-CSS3-Page-Transitions).
+#### Remaining Set Up Steps..
+Follow the rest of the set up instructions at the [main plugin repo](https://github.com/techjacker/Backbone-Responsive-CSS3-Page-Transitions).
 
 
 
@@ -71,30 +74,36 @@ You still have all the functionality of the base plugin but now you get the foll
 	var threeDRouter = backboneResponsiveCSS3Transitions.extend({....});
 	threeDRouter = new threeDRouter(options);
 
-@param {options.iScroll}
-accepts: object
 
-@param {options.iScroll.activeDefault}
-accepts: boolean
-default: true
-description: do you want iscroll to be enabled at application start up?
+##### @param {options.wrapElement}
+* accepts: jQuery selector of element to wrap > ensure this element does not have an ID. iScroll needs an id which is assigned in the plugin
+	* good: "wrapElement": ".wrapper"
+	* bad: "wrapElement": "#my-wrapper"
 
-@param {options.iScroll.positionScroller}
-accepts: boolean
-default: false
-description: do you want the scroller to be positioned at the edge of the screen? Useful if your wrapping div has outside margins.
+##### @param {options.iScroll}
+* accepts: object
 
-@param {options.iScroll.scrollerClass}
-accepts: string
-description: iScroll will add this classname to the scroller so you can style it how you like
+##### @param {options.iScroll.activeDefault}
+* accepts: boolean
+* default: true
+* description: do you want iscroll to be enabled at application start up?
 
-@param {options.iScroll.options}
-accepts: object
-description: the object passed to iScroll constructor when instantiating
+##### @param {options.iScroll.positionScroller}
+* accepts: boolean
+* default: false
+* description: do you want the scroller to be positioned at the edge of the screen? Useful if your wrapping div has outside margins.
 
-	// ...somewhere in the bowels of backbone.responsiveCSS3transitions.iscroll.js
-	// forget about the first param - the plugin takes care of that
-	new iScroll('iscroll-wrapper', options.iScroll.options);
+##### @param {options.iScroll.scrollerClass}
+* accepts: string
+* description: iScroll will add this classname to the scroller so you can style it how you like
+
+##### @param {options.iScroll.options}
+* accepts: object
+* description: the object passed to iScroll constructor when instantiating
+
+		// ...somewhere in the bowels of backbone.responsiveCSS3transitions.iscroll.js
+		// forget about the first param - the plugin takes care of that
+		new iScroll('iscroll-wrapper', options.iScroll.options);
 
 
 
