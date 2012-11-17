@@ -130,15 +130,18 @@
 				}
 			},
 			initializeiScrollFn: function () {
+				var self = this;
 				if (this.iScrollActive) {
 					// initialize iScroll and position at top of new page
 					this.hideScrollbarSledgehammer();
-					this.newView.iScroll = new iScroll('iscroll-wrapper', this.iScrollOptions);
-					this.newView.iScroll.scrollTo(0, 0, 0);
+					setTimeout(function () {
+						self.newView.iScroll = new iScroll('iscroll-wrapper', self.iScrollOptions);
+						self.newView.iScroll.scrollTo(0, 0, 0);
+						// add scroller custom classes + position if spocified in router init opts
+						self.iScrollClass && $(self.newView.iScroll.vScrollbarWrapper).addClass(self.iScrollClass);
+						setTimeout(self.positionScrollerSetUp, 100);
+					}, 100);
 
-					// add scroller custom classes + position if spocified in router init opts
-					this.iScrollClass && $(this.newView.iScroll.vScrollbarWrapper).addClass(this.iScrollClass);
-					setTimeout(this.positionScrollerSetUp, 200);
 				}
 			},
 			initializeiScroll: function () {
